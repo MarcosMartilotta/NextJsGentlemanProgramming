@@ -1,0 +1,27 @@
+en nextJs 12 para ahcer prefetching o sea la peticion del lado del server se usaba getServerSideProps()
+no usar el hook usseeffect con prefetching
+getstaticprops es el clasico, pie y lo renderiza en el cliente
+
+swr: Es una estrategia para catchear informacion, hacemos una peticion al back la guardamos en el cache 
+    luego nos vamos y cuando uno vuelve a la pagina vuelve a tratar de recibir informacion. La magia de esto
+    es que cuando la data sea igual no va a haber re render. Si son distintas si que hace rerender.
+
+en nextjs13 OJO CON LA DOCU DE NEXTJS porque muchas parte son de nextjs 12. Pages usa getServerSideProps() pero la carpeta
+app ya no. 
+
+next js permite hacer todas las peticiones al mismo tiempo 
+
+fetch dinamico vs fetch estatico
+normamlmente nextjs trabaja de manera estatica, trata de catchear toda la informacion que pueda. 
+la data puede ser cattcheada en diferentes servidores y de diferentes maneras. 
+
+revalidacion de data
+por default es en el serve con ssg
+on demand sirve para revalidar la data pero cuando nosotros queramos
+
+streaming y suspense
+Suspense: mientras se renderice mostra un fallback o loadinkSkeleton 
+Streaming: LA informacion va a estar sectorizada y solo va a estar cargando lo que se necesite, por ejemplo toda la datra
+dentro de un div que se este cargando sera por su parte y el resto va a estar en la suya. Lo bueno de esto es que el resto
+ya va a ser accionable 
+Si usamos erro boundarys por ejemplo vamos a lograr que cada seccion pueda sedr reseteable etc. 

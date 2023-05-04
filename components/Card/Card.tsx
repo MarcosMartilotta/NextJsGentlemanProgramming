@@ -30,6 +30,8 @@ function Card({ data }: Props) {
       {/* si no tengo data type pongo que no tiene */}
       <p>Created: {data.created}</p>
       {!!data.image && (
+        /* Necesito si o si tener width y height porque sino voy a tener layout shift. Que es
+        que no carguen las imagenes entonces se muevan los elementos de una mala manera mientras carga */
         <Image width="100" height="100" alt="Image" src={data.image} />
       )}
     </div>
